@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.p-layout {
+	@apply p-4 lg:p-5 xl:p-6;
+}
+
+.center {
+	@apply justify-center items-center;
+}
+
+.row-section {
+	@apply flex flex-col md:flex-row;
+}
+
+.headline {
+	@apply font-semibold text-gray-900 text-xl lg:text-2xl;
+}
+
+.field {
+	@apply p-2 sm:px-3 sm:py-2 outline-none rounded-xl;
+}
+
+.field-primary {
+	@apply field text-gray-600 border border-gray-200 focus:border-secondary bg-gray-200 hover:bg-white focus:bg-white duration-200;
+}
+
+.btn {
+	@apply px-4 py-2 text-center outline-none rounded-xl;
+}
+
+.btn-primary {
+	@apply btn text-white bg-primary hover:brightness-90 active:brightness-100 duration-200;
+}
