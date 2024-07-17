@@ -18,6 +18,18 @@
 	@apply font-semibold text-gray-900 text-xl lg:text-2xl;
 }
 
+.tag {
+	@apply px-2 py-1 text-gray-800 bg-gray-200 rounded-lg;
+}
+
+h4 {
+	@apply text-base sm:text-lg text-gray-700;
+}
+
+span {
+	@apply font-semibold text-gray-800;
+}
+
 .field {
 	@apply p-2 sm:px-3 sm:py-2 outline-none rounded-xl;
 }

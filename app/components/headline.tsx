@@ -5,8 +5,10 @@ export default function Headline(): JSX.Element {
 				Cari Film kamu disini!
 			</h1>
 			<p className="text-sm sm:text-base text-gray-700">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus
-				quia tempore rem harum earum quod, amet laborum neque quisquam.
+				{/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus
+				quia tempore rem harum earum quod, amet laborum neque quisquam. */}
+				Ingin nonton film tapi bingung apakah filmnya bagus atau tidak? Jangan
+				khawatir, kamu bisa mencari film yang kamu inginkan di sini!
 			</p>
 		</div>
 	);

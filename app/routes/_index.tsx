@@ -29,7 +29,7 @@ export default function Component(): JSX.Element {
 			<section className="p-layout row-section flex-wrap gap-10 justify-center items-center">
 				{/* <h3>Query : {JSON.stringify(data.Search)}</h3> */}
 				{data.Search.map((movie) => {
-					return <Card key={movie.imdbID} movie={movie} />;
+					return <Card key={movie.imdbID} body={true} movie={movie} />;
 				})}
 			</section>
 		</div>
