@@ -35,3 +35,7 @@ interface movieDetail extends movie {
 	imdbVotes: string;
 	BoxOffice: string;
 }
+
+interface error extends searchMovies {
+	Error: string;
+}

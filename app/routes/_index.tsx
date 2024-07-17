@@ -1,24 +1,33 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import Card from "~/components/card";
+import ErrorCard from "~/components/errorCard";
 import Headline from "~/components/headline";
 import Search from "~/components/search";
 
 export async function loader({
 	request,
-}: LoaderFunctionArgs): Promise<searchMovies> {
+}: LoaderFunctionArgs): Promise<searchMovies | error> {
 	let url: URL = new URL(request.url);
 	let query: string = url.searchParams.get("query") || "Marvel";
 	const response: Response = await fetch(
 		`https://www.omdbapi.com/?apikey=${process.env.API_KEY}&s=${query}`,
 	);
-	const data: searchMovies = await response.json();
+	const data: searchMovies | error = await response.json();
 
 	return data;
 }
 
+export function ErrorBoundary() {
+	return (
+		<div className="flex flex-col w-full min-h-screen justify-center items-center">
+			<ErrorCard errorText={true} />
+		</div>
+	);
+}
+
 export default function Component(): JSX.Element {
-	let data: searchMovies = useLoaderData<typeof loader>();
+	const data: searchMovies | error = useLoaderData<typeof loader>();
 
 	return (
 		<div>
@@ -27,10 +36,15 @@ export default function Component(): JSX.Element {
 				<Search />
 			</section>
 			<section className="p-layout row-section flex-wrap gap-10 justify-center items-center">
-				{/* <h3>Query : {JSON.stringify(data.Search)}</h3> */}
-				{data.Search.map((movie) => {
-					return <Card key={movie.imdbID} body={true} movie={movie} />;
-				})}
+				{data.Response === "True" ? (
+					<>
+						{data.Search.map((movie: movie) => {
+							return <Card key={movie.imdbID} body={true} movie={movie} />;
+						})}
+					</>
+				) : (
+					<ErrorCard errorText={false} />
+				)}
 			</section>
 		</div>
 	);
