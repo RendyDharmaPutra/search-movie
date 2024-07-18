@@ -1,4 +1,4 @@
-import Accordion from "../components/accordion";
+import Accordion from "../accordion";
 
 export default function Plot({ Plot }: { Plot: string }): JSX.Element {
 	return (

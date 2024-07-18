@@ -1,11 +1,12 @@
 import { LoaderFunctionArgs, TypedDeferredData } from "@remix-run/node";
 import { Await, defer, useLoaderData } from "@remix-run/react";
-import Card from "~/container/card";
+import Card from "~/components/container/card";
 import ErrorCard from "~/components/boundary/errorCard";
 import Headline from "~/components/headline";
-import Search from "~/container/search";
+import Search from "~/components/container/search";
 import { Suspense } from "react";
 import Loading from "~/components/boundary/loading";
+import Pagination from "~/components/container/pagination";
 
 export async function loader({ request }: LoaderFunctionArgs): Promise<
 	TypedDeferredData<{
@@ -33,7 +34,7 @@ export default function Component(): JSX.Element {
 	const data = useLoaderData<typeof loader>();
 
 	return (
-		<div>
+		<>
 			<section className="p-layout flex flex-col gap-6 bg-white">
 				<Headline />
 				<Search />
@@ -55,8 +56,9 @@ export default function Component(): JSX.Element {
 							)
 						}
 					</Await>
+					<Pagination />
 				</Suspense>
 			</section>
-		</div>
+		</>
 	);
 }

@@ -2,11 +2,11 @@ import { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import Back from "~/components/back";
 import ErrorCard from "~/components/boundary/errorCard";
-import Card from "~/container/card";
-import Desc from "~/container/desc";
-import Plot from "~/container/plot";
-import Ratings from "~/container/ratings";
-import Revenue from "~/container/revenue";
+import Card from "~/components/container/card";
+import Desc from "~/components/container/desc";
+import Plot from "~/components/container/plot";
+import Ratings from "~/components/container/ratings";
+import Revenue from "~/components/container/revenue";
 
 export async function loader({
 	params,

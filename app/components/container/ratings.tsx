@@ -1,5 +1,5 @@
-import Accordion from "../components/accordion";
-import List from "../components/list";
+import Accordion from "../accordion";
+import List from "../list";
 
 export default function Ratings({
 	Ratings,

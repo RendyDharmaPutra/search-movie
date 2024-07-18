@@ -43,5 +43,13 @@ span {
 }
 
 .btn-primary {
-	@apply btn text-white bg-primary hover:brightness-90 active:brightness-100 duration-200;
+	@apply btn text-white bg-primary darker-hover;
+}
+
+.btn-secondary {
+	@apply btn font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-white darker-hover;
+}
+
+.darker-hover {
+	@apply hover:brightness-90 active:brightness-100 duration-200;
 }

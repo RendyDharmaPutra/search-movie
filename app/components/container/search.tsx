@@ -10,7 +10,10 @@ export default function Search(): JSX.Element {
 
 	function updateQuery(newQuery: string): void {
 		let params: URLSearchParams = new URLSearchParams(searchParams);
+
+		params.delete("page");
 		params.set("query", newQuery);
+
 		setSearchParams(params);
 	}
 
