@@ -1,13 +1,12 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import Accordion from "~/components/accordion";
 import Back from "~/components/back";
-import Card from "~/components/card";
-import Desc from "~/components/desc";
-import List from "~/components/list";
-import Plot from "~/components/plot";
-import Ratings from "~/components/ratings";
-import Revenue from "~/components/revenue";
+import ErrorCard from "~/components/error/errorCard";
+import Card from "~/container/card";
+import Desc from "~/container/desc";
+import Plot from "~/container/plot";
+import Ratings from "~/container/ratings";
+import Revenue from "~/container/revenue";
 
 export async function loader({
 	params,
@@ -18,6 +17,14 @@ export async function loader({
 	const movie: movieDetail = await response.json();
 
 	return movie;
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+	return (
+		<div className="flex flex-col w-full min-h-screen justify-center items-center">
+			<ErrorCard errorText={true} />
+		</div>
+	);
 }
 
 export default function Page(): JSX.Element {

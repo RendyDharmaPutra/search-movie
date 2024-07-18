@@ -18,9 +18,10 @@ export default function Card({
 			<div
 				className={`${
 					body ? "absolute bottom-0" : "hidden"
-				}absolute bottom-0 px-4 py-2 flex flex-col gap-2 w-full min-h-[8rem] opacity-0 group-hover:opacity-100 bg-white/80 backdrop-blur-xl  duration-200`}
+				}absolute bottom-0 px-4 py-2 flex flex-col gap-2 w-full min-h-[8rem] opacity-0 group-hover:opacity-100 bg-white duration-200`}
 			>
 				<Link
+					prefetch="intent"
 					to={`/${movie.imdbID}`}
 					className=" text-xl font-semibold text-gray-800 hover:text-primary duration-200"
 				>

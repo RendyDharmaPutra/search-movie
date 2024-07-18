@@ -1,5 +1,5 @@
-import Accordion from "./accordion";
-import List from "./list";
+import Accordion from "../components/accordion";
+import List from "../components/list";
 
 export default function Revenue({
 	Country,

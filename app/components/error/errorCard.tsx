@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 export default function ErrorCard({
 	errorText,
 }: {
@@ -22,9 +24,15 @@ export default function ErrorCard({
 			</h1>
 			<h4>
 				{errorText
-					? "Terjadi kesalahan, silahkan periksa jaringan anda"
+					? "Terjadi kesalahan tidak diketahui, silahkan periksa jaringan anda"
 					: "Silahkan masukkan kembali Judul Film yang kamu cari"}
 			</h4>
+			<Link
+				to={"/"}
+				className="mt-2 text-base sm:text-lg text-primary hover:brightness-75 duration-200"
+			>
+				Kembali ke halaman awal
+			</Link>
 		</div>
 	);
 }
