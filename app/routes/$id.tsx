@@ -1,7 +1,7 @@
 import { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import Back from "~/components/back";
-import ErrorCard from "~/components/error/errorCard";
+import ErrorCard from "~/components/boundary/errorCard";
 import Card from "~/container/card";
 import Desc from "~/container/desc";
 import Plot from "~/container/plot";
@@ -20,11 +20,7 @@ export async function loader({
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {
-	return (
-		<div className="flex flex-col w-full min-h-screen justify-center items-center">
-			<ErrorCard errorText={true} />
-		</div>
-	);
+	return <ErrorCard errorText={true} />;
 }
 
 export default function Page(): JSX.Element {
