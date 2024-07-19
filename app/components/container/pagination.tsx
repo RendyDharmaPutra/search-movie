@@ -18,7 +18,7 @@ export default function Pagination(): JSX.Element {
 	return (
 		<section className="p-layout flex flex-row justify-between items-center w-full rounded-2xl bg-white">
 			<h5 className="text-sm sm:text-base text-gray-700">
-				Halaman ke {currentPage}
+				Halaman {currentPage}
 			</h5>
 			<div className="flex flex-row gap-1 sm:gap-4">
 				<button

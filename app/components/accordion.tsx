@@ -12,7 +12,7 @@ export default function Accordion({
 	return (
 		<div
 			className={`overflow-hidden rounded-xl ${
-				show && "bg-gray-100"
+				show && "bg-gray-50"
 			} duration-200`}
 		>
 			<section
@@ -39,7 +39,7 @@ export default function Accordion({
 				<section
 					className={`p-layout ${
 						show ? "scale-100 opacity-100" : "scale-0 opacity-0"
-					} origin-top w-full min-h-[6rem] bg-gray-100 duration-200`}
+					} origin-top w-full min-h-[6rem] bg-gray-50 duration-200`}
 				>
 					{children}
 				</section>
