@@ -13,21 +13,18 @@ export async function loader({ request }: LoaderFunctionArgs): Promise<
 		movies: Promise<searchMovies | error>;
 	}>
 > {
-	let url: URL = new URL(request.url);
-	let query: string = url.searchParams.get("query") || "Marvel";
+	const url: URL = new URL(request.url);
+	const query: string = url.searchParams.get("query") || "Marvel";
+	const page: string = url.searchParams.get("page") || "1";
 
 	const movies: () => Promise<searchMovies | error> = async () => {
 		const response: Response = await fetch(
-			`https://www.omdbapi.com/?apikey=${process.env.API_KEY}&s=${query}`,
+			`https://www.omdbapi.com/?apikey=${process.env.API_KEY}&s=${query}&page=${page}`,
 		);
 		return await response.json();
 	};
 
 	return defer({ movies: movies() });
-}
-
-export function ErrorBoundary() {
-	return <ErrorCard errorText={true} />;
 }
 
 export default function Component(): JSX.Element {
@@ -61,4 +58,8 @@ export default function Component(): JSX.Element {
 			</section>
 		</>
 	);
+}
+
+export function ErrorBoundary() {
+	return <ErrorCard errorText={true} />;
 }

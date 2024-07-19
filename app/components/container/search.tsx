@@ -2,7 +2,7 @@ import { useSearchParams } from "@remix-run/react";
 import { useState } from "react";
 
 export default function Search(): JSX.Element {
-	let [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 
 	const [query, setQuery] = useState<string>(
 		searchParams.get("query") || "Marvel",
