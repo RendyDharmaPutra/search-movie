@@ -12,12 +12,12 @@ export default function Accordion({
 	return (
 		<div
 			className={`overflow-hidden rounded-xl ${
-				show && "bg-gray-200"
+				show && "bg-gray-100"
 			} duration-200`}
 		>
 			<section
 				onClick={() => setShow(!show)}
-				className="p-layout flex flex-row justify-between w-full rounded-xl bg-white hover:bg-gray-200 active:bg-gray-300 duration-200 cursor-pointer"
+				className="p-layout flex flex-row justify-between w-full rounded-xl bg-white hover:bg-gray-200 active:bg-white duration-200 cursor-pointer"
 			>
 				<h4 className="font-medium">{title}</h4>
 				<div
@@ -39,7 +39,7 @@ export default function Accordion({
 				<section
 					className={`p-layout ${
 						show ? "scale-100 opacity-100" : "scale-0 opacity-0"
-					} origin-top w-full min-h-[6rem] bg-gray-200 duration-200`}
+					} origin-top w-full min-h-[6rem] bg-gray-100 duration-200`}
 				>
 					{children}
 				</section>
